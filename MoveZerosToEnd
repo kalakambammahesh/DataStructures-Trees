@@ -1,0 +1,47 @@
+package sample;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
+ 
+
+
+public class TestingPurpose {
+	
+	 public static void moveZerosToEnd(int[] arr) {
+		 int length = arr.length;
+		 int j = 0;
+		 for(int i = 0;i < length;i++) {
+			 if(arr[j] ==0 && arr[i] != arr[j]) {
+				 int temp = arr[i];
+				 arr[i] = arr[j];
+				 arr[j] = temp;
+			 }
+			 if(arr[j] != 0){
+				 j++;
+			 }
+		 }
+		 for(int element:arr){
+			 System.out.println(element);
+		 }
+	 }
+
+   public static void main(String[] args) {
+	 //  moveZerosToEnd(new int[]{1,2,8,9,0,6,0,3,4,0,5,0,6});
+	   String s1 = new String("Mahesh");
+	   String s2 = "Mahesh";
+	   String s3 = s1.intern();
+	   String s4 = "Mahesh";
+	   
+	   System.out.println(s1 == s2);
+	   System.out.println(s2 == s3);
+	   System.out.println(s1 == s3);
+	   System.out.println(s2 == s4);
+   }
+
+}
