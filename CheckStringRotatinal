@@ -1,0 +1,22 @@
+public class TestingPurpose {
+	
+	//Method to check two given strings are rotational.
+	public static boolean checkStringRotational(String string1, String string2) {
+		String temp = string1.concat(string2);
+		
+		//Base Check
+		if(string1.length() != string2.length()) {
+			return false;
+		}
+		if(temp.indexOf(string2) != -1) {
+			return true;
+		}else 
+			return false;
+	}
+	
+
+   public static void main(String[] args) throws CloneNotSupportedException {
+	   System.out.println(checkStringRotational("Mahesh", "heshMa1"));
+   }
+   
+}
