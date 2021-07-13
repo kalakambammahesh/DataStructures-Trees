@@ -1,0 +1,49 @@
+
+public class TestingPurpose extends Thread {
+	
+	//<root-Node><Left-Node><right-Node>
+	public static void preOrderTraversal(TreeNode node) {
+		if(node == null)
+			return;
+		System.out.println(node.data);
+		if(node.left != null)
+			preOrderTraversal(node.left);
+		if(node.right != null)
+			preOrderTraversal(node.right);
+	}
+	
+	//<left-Node><right-node><root-Node>
+	public static void postOrderTraversal(TreeNode node) {
+		if(node == null)
+			return;
+		if(node.left != null)
+			postOrderTraversal(node.left);
+		if(node.right != null)
+			postOrderTraversal(node.right);
+		System.out.println(node.data);
+		
+	}
+	
+	//<Left-Node><root-Node><right-Node>
+	public static void inOrderTraversal(TreeNode node) {
+		if(node == null)
+			return;
+		if(node.left != null)
+			inOrderTraversal(node.left);
+		System.out.println(node.data);
+		if(node.right != null)
+			inOrderTraversal(node.right);
+	}
+	
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException {
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		
+	//	inOrderTraversal(root);
+	//	preOrderTraversal(root);
+		postOrderTraversal(root);
+	}
+}
